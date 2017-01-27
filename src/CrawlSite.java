@@ -108,15 +108,14 @@ public class CrawlSite {
                 // Check to see if link exists in pages
                 // If it doesn't, insert it
                 if (!this.pages.searchLinks(cleanLink) &&
-                        cleanLink.contains("firstchoicewheelsandtires.com") &&
+                        cleanLink.contains(this.websiteAddress) &&
                         !cleanLink.contains(".jpg") &&
                         !cleanLink.contains(".png") &&
                         !cleanLink.contains(".pdf") &&
                         !cleanLink.contains(".gif") &&
                         !cleanLink.contains(".js") &&
                         !cleanLink.contains(".css") &&
-                        !cleanLink.contains("mailto") &&
-                        !cleanLink.contains("page=inquire")) {
+                        !cleanLink.contains("mailto")) {
                             this.pages.insertPage(cleanLink);
 
                             // Check to see if link has been visited.
